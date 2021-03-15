@@ -1,0 +1,22 @@
+#define TempPin A0
+
+int ValorTemp;
+
+void setup()
+{
+  Serial.begin(9600);
+}
+void loop()
+{
+  ValorTemp = analogRead(TempPin)*4;
+  
+  float TempCel = ( ValorTemp/4092.0)*150.15; 
+
+  Serial.print("TEMPRATURA en Celcius = "); //Displaying temperature in Celsius
+  Serial.print(TempCel);
+  Serial.print("*C");
+  Serial.println();
+  
+  delay(1000);
+
+}
